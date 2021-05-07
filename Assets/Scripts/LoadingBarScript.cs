@@ -35,10 +35,10 @@ public class LoadingBarScript : MonoBehaviour
         timeSpent += Time.deltaTime;
         if(timeSpent > TimeToComplete)
         {
-            minigameLoader.InvokeFailure();
+            //minigameLoader.InvokeFailure();
         } else if(currentFillLevel >= MaxScale)
         {
-            minigameLoader.InvokeSuccess();
+            //minigameLoader.InvokeSuccess();
         }
     }
 
