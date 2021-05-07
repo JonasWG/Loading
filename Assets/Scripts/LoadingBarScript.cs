@@ -12,6 +12,7 @@ public class LoadingBarScript : MonoBehaviour
     public float TimeToComplete;
 
     private MinigameLoader minigameLoader;
+    private SpriteRenderer spriteRenderer;
 
     private float timeSpent;
     private float currentFillLevel;
@@ -21,6 +22,7 @@ public class LoadingBarScript : MonoBehaviour
     void Start()
     {
         minigameLoader = GameObject.FindWithTag("MinigameLoader").GetComponent<MinigameLoader>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void SetTimer(float seconds) {
@@ -40,12 +42,20 @@ public class LoadingBarScript : MonoBehaviour
         }
     }
 
-    public void FillPercent(float p)
+    public void SetFillPercent(float p)
     {
-        Vector3 v = BarFill.transform.localScale;
-        v.x = p / 10f;
-        BarFill.transform.localScale = v;
-        currentFillLevel = p / 10f;
+        var fill = p / 10f;
+        Vector2 v = spriteRenderer.size;
+        v.x = fill;
+        spriteRenderer.size = v;
+        currentFillLevel = fill;
+    }
+
+    public void AddFillPercent(float p)
+    {
+        var fill = p / 10f;
+        spriteRenderer.size += new Vector2(fill, 0);
+        currentFillLevel += fill;
     }
 
     public void ResetFill()

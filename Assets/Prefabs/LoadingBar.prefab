@@ -212,3 +212,4 @@ MonoBehaviour:
   BarFill: {fileID: 5233092807719518906}
   MaxScale: 10
   MinScale: 0
+  TimeToComplete: 0
