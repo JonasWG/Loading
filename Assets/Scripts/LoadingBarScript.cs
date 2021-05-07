@@ -22,7 +22,7 @@ public class LoadingBarScript : MonoBehaviour
     void Start()
     {
         minigameLoader = GameObject.FindWithTag("MinigameLoader").GetComponent<MinigameLoader>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = this.transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     public void SetTimer(float seconds) {
@@ -35,10 +35,10 @@ public class LoadingBarScript : MonoBehaviour
         timeSpent += Time.deltaTime;
         if(timeSpent > TimeToComplete)
         {
-            minigameLoader.InvokeFailure();
+            //minigameLoader.InvokeFailure();
         } else if(currentFillLevel >= MaxScale)
         {
-            minigameLoader.InvokeSuccess();
+            //minigameLoader.InvokeSuccess();
         }
     }
 

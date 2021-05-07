@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneCollection:
   - Shaking_mg
-  - Shaking_mg
+  - mg
   lastSceneState: 0
