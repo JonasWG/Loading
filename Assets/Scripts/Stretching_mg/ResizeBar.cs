@@ -14,7 +14,10 @@ public class ResizeBar : MonoBehaviour
     private float sizeDiff = 0.54f;
     private LoadingBarScript loadingBarScript;
 
-    
+    private bool resized;
+
+
+    public Texture2D texture;
     
     // Start is called before the first frame update
     void Start()
@@ -34,11 +37,16 @@ public class ResizeBar : MonoBehaviour
     private void OnMouseOver()
     {
         isOver = true;
+        Cursor.SetCursor(texture, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     private void OnMouseExit()
     {
         isOver = false;
+    }
+
+    private void OnMouseUp()
+    {
         boxCollider2d.size /= 2;
     }
 
