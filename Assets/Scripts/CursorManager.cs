@@ -23,7 +23,8 @@ public class CursorManager : MonoBehaviour
     {
         ARROW,
         STRETCH_HORIZONTAL,
-        STRETCH_VERTICAL
+        STRETCH_VERTICAL,
+        GOLF
     }
 
     private void Awake()

@@ -10,6 +10,9 @@ TagManager:
   - Pipe
   - Metaball_liquid
   - PipeStart
+  - GolfBat
+  - GolfBall
+  - LoadingBarWall
   layers:
   - Default
   - TransparentFX
