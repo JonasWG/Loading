@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &147065195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5233092808561645063, guid: 6a45b871375264696901667b2e613ee6, type: 3}
+  m_PrefabInstance: {fileID: 1626321638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &399035938
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +574,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedModifier: 1
   pedal: {fileID: 399035938}
+  finish: {fileID: 1015084888}
+  bar: {fileID: 147065195}
 --- !u!61 &1992573059
 BoxCollider2D:
   m_ObjectHideFlags: 0
