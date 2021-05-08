@@ -8,10 +8,7 @@ public class UI_CanvasGetCamera : MonoBehaviour
     Canvas canvas;
     void Start()
     {
-        if (canvas.worldCamera == null)
-        {
-            canvas.worldCamera = Camera.main;
-        }
+
     }
 
 }

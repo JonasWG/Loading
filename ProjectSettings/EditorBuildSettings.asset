@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Game2.unity
     guid: f543c5c587428754e93668503528374a
   - enabled: 1
+    path: Assets/Scenes/Fishing_mg.unity
+    guid: 86135de4191a7a648baeac0ec6887509
+  - enabled: 1
+    path: Assets/Scenes/Biking_mg.unity
+    guid: be684edea64144b359beb0c384b0d60f
+  - enabled: 1
     path: Assets/Scenes/Game3.unity
     guid: e4d0f7bf68f0d54458fd5f63c224edea
   - enabled: 1
