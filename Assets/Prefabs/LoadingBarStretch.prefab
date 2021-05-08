@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 2268461060837744648}
   - component: {fileID: 8406819251420320300}
   m_Layer: 0
-  m_Name: LoadingBarStretching
+  m_Name: LoadingBarStretch
   m_TagString: LoadingBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

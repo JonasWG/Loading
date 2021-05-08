@@ -8,6 +8,9 @@ TagManager:
   - LoadingBar
   - UI
   - Pipe
+  - GolfBat
+  - GolfBall
+  - LoadingBarWall
   layers:
   - Default
   - TransparentFX
