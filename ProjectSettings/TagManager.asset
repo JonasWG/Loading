@@ -13,6 +13,7 @@ TagManager:
   - GolfBat
   - GolfBall
   - LoadingBarWall
+  - PipePoint
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
+  - PipeConnection
+  - Pipe
   - 
   - 
   - 
