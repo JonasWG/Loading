@@ -44,7 +44,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneCollection:
-  - Shaking_mg
+  - Game1
+  - Golf_mg
+  - Game2
   - Stretching_mg
-  - Balancing_mg
+  - Game3
+  - Golf_mg
+  - Game4
+  - Balance_mg
+  - Game5
+  - Golf_mg
+  - Game6
+  - Waterpipe_mg
+  - Game7
+  - Shaking_mg
+  - Game8
   lastSceneState: 0

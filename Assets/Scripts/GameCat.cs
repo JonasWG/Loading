@@ -13,6 +13,9 @@ public class GameCat : MonoBehaviour
             _ = this;
         else
             Destroy(this.gameObject);
+
+        if (MinigameLoader._ != null && MinigameLoader._.lastSceneState == MinigameLoader.LastSceneState.SUCCESS)
+            loaded = true;
     }
     #endregion
 
@@ -57,7 +60,7 @@ public class GameCat : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            print("go to the next minigame scene");
+            MinigameLoader._.InvokeSuccess();
         }
     }
 

@@ -16,7 +16,14 @@ public class MinigameLoader : MonoBehaviour
     {
         SUCCESS, FAILURE
     }
-
+    public static MinigameLoader _;
+    private void Awake()
+    {
+        if (_ == null)
+            _ = this;
+        else
+            Destroy(this.gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +33,8 @@ public class MinigameLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 
     void LoadMinigame(int i)
@@ -34,7 +42,7 @@ public class MinigameLoader : MonoBehaviour
         SceneManager.LoadScene(SceneCollection[i]);
         SceneIndex = i;
         CurrentScene = SceneManager.GetActiveScene();
-        if(!CurrentScene.isLoaded)
+        if (!CurrentScene.isLoaded)
         {
             Debug.Log("Encountered error loading scene");
         }

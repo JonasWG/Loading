@@ -13,11 +13,15 @@ public class Game_Player : MonoBehaviour
     public float moveTimeCheck = 0.1f;
     public Vector2 input;
     public LayerMask groundLayer;
-    public enum Holding { none, bike, golf }
+    public enum Holding { none, bike, golf, rod, stretch }
     public Holding hold = Holding.none;
     public SpriteRenderer holdingSprite;
     public Sprite bike;
     public Sprite golf;
+    public Sprite rod;
+    public Sprite stretch;
+
+
     UI_Manager ui;
     public Sprite playerHands;
     void Start()
@@ -156,6 +160,12 @@ public class Game_Player : MonoBehaviour
                 break;
             case Holding.golf:
                 holdingSprite.sprite = golf;
+                break;
+            case Holding.rod:
+                holdingSprite.sprite = rod;
+                break;
+            case Holding.stretch:
+                holdingSprite.sprite = stretch;
                 break;
         }
     }
