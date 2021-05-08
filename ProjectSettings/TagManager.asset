@@ -8,6 +8,11 @@ TagManager:
   - LoadingBar
   - UI
   - Pipe
+  - Metaball_liquid
+  - PipeStart
+  - GolfBat
+  - GolfBall
+  - LoadingBarWall
   layers:
   - Default
   - TransparentFX
@@ -56,4 +61,10 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 315404299
+    locked: 0
+  - name: Slime
+    uniqueID: 2491127039
+    locked: 0
+  - name: Pipes
+    uniqueID: 3803556437
     locked: 0

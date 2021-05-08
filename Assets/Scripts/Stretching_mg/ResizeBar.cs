@@ -66,9 +66,8 @@ public class ResizeBar : MonoBehaviour
             clickedAt = newClick;
             if(deltaPos == Vector2.zero)
                 return;
-            boxCollider2d.offset += Vector2.right * deltaPos.x / 2f;
-            spriteRenderer.size = new Vector2(size.x + deltaPos.x / 2f, size.y);
-            
+            boxCollider2d.offset += Vector2.right * deltaPos.x;
+            spriteRenderer.size = new Vector2(size.x + deltaPos.x, size.y);
             loadingBarScript.SetFillPercent((spriteRenderer.size.x - 0.54f) * 10);
         }
     }

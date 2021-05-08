@@ -46,7 +46,7 @@ public class LoadingBarScript : MonoBehaviour
         var fill = p / 10f;
         if (fill > maxScale)
         {
-            spriteRenderer.size = new Vector2(maxScale, 0);
+            spriteRenderer.size = new Vector2(maxScale, 1);
         }
         else
         {

@@ -210,10 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc9499302def459db5e251a515ecbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barFill: {fileID: 0}
-  maxScale: 0
+  maxScale: 10
   minScale: 0
-  timeToComplete: 0
+  timeToComplete: 25
+  currentFillLevel: 0
 --- !u!61 &8795916291801210545
 BoxCollider2D:
   m_ObjectHideFlags: 0
