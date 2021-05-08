@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 6598940292931921386}
   - component: {fileID: 4850495905702023491}
   - component: {fileID: 970015033}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PipeHori
   m_TagString: Pipe
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6598940292931921172}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -370,6 +370,7 @@ MonoBehaviour:
   triggerTwo: {fileID: 0}
   printLog: 1
   hasEnergy: 0
+  chainNum: 0
 --- !u!50 &970015033
 Rigidbody2D:
   serializedVersion: 4

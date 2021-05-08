@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 4360456025146110129}
   - component: {fileID: 239820130}
   - component: {fileID: 335692341}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PipeCorner2
   m_TagString: Pipe
   m_Icon: {fileID: 0}
@@ -370,6 +370,7 @@ MonoBehaviour:
   triggerTwo: {fileID: 0}
   printLog: 0
   hasEnergy: 0
+  chainNum: 0
 --- !u!50 &335692341
 Rigidbody2D:
   serializedVersion: 4
