@@ -12,30 +12,96 @@ public class PipeScript : MonoBehaviour
     
     FillScript fillScript;
 
+    private bool onAnim;
+    private bool offAnim;
+
+    private Dictionary<int, GameObject> nb;
+
     public bool hasEnergy;
-    private bool onAnim = false;
-    private bool offAnim = true;
     private bool connectedToSource;
 
-    private List<KeyValuePair<GameObject, bool>> neighbours;
+    public int chainNum;
 
     // Start is called before the first frame update
     void Start()
     {
-        neighbours = new List<KeyValuePair<GameObject, bool>>();
+        chainNum = 9999;
+        nb = new Dictionary<int, GameObject>();
         fillScript = GetComponentInChildren<FillScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckTriggers();
+        int minChain = 9999;
+        foreach(KeyValuePair<int, GameObject> n in nb)
+        {
+            var pipe = n.Value.GetComponent<PipeScript>();
+            if (pipe.ChainNum() < minChain)
+            {
+                minChain = pipe.ChainNum();
+            }
+            if (!hasEnergy && pipe.IsEnergized() && pipe.ChainNum() < chainNum - 1)
+            {
+                SetEnergy(true);
+                chainNum = pipe.ChainNum() + 1;
+                break;
+            }
+            
+        }
+
+        if(!connectedToSource && hasEnergy)
+        {
+           if(nb.Count == 0)
+            {
+                SetEnergy(false);
+                chainNum = 9999;
+            } else
+            {
+                if(minChain >= chainNum)
+                {
+                    SetEnergy(false);
+                    chainNum = 9999;
+                }
+            }
+        }
+
+        HandleAnim();
+
+
+
     }
+
+    public void debugLog(string l)
+    {
+        if(printLog)
+        {
+            Debug.Log(l);
+        }
+    }
+
+    public void HandleAnim()
+    {
+        if(IsEnergized() && !onAnim)
+        {
+            onAnim = true;
+            offAnim = false;
+            StartCoroutine(fillScript.TurnOn());
+        }
+
+        if(!IsEnergized() && !offAnim)
+        {
+            onAnim = false;
+            offAnim = true;
+            StartCoroutine(fillScript.TurnOff());
+        }
+
+    }
+
 
     public void Clicked()
     {
         transform.Rotate(Vector3.forward, -90f);
-        //CheckTriggers();
     }
 
     public bool IsEnergized()
@@ -43,110 +109,70 @@ public class PipeScript : MonoBehaviour
         return hasEnergy;
     }
 
-    public void CheckTriggers()
-    {
-        if (connectedToSource) return;
-        bool hasConnected = false;
-        foreach(KeyValuePair<GameObject, bool> n in neighbours)
-        {
-            if(!hasEnergy && n.Value && n.Key.GetComponent<PipeScript>().IsEnergized())
-            {
-                if(printLog)
-                {
-                    Debug.Log("Found powered neighbouhr");
-                }
-                hasEnergy = true;
-                StartCoroutine(fillScript.TurnOn());
-                onAnim = true;
-                offAnim = false;
-            } else if(hasEnergy && n.Value)
-            {
-                if (printLog)
-                {
-                    Debug.Log("found neightbour, already powered");
-                }
-                hasConnected = true;
-            }
-        }
-
-        if(!hasConnected && hasEnergy)
-        {
-            if(printLog)
-            {
-                Debug.Log("Turn off");
-            }
-            StartCoroutine(fillScript.TurnOff());
-            offAnim = true;
-            onAnim = false;
-        }
-
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(printLog)
+        if (collision.CompareTag("PipePoint"))
         {
-            //Debug.Log(collision.gameObject.name);
-        }
-        if (collision.transform.parent != null)
+            if (printLog)
+            {
+                Debug.Log("Gained connection");
+                Debug.Log(collision.transform.parent.gameObject.GetInstanceID());
+
+            }
+            var id = collision.transform.parent.gameObject.GetInstanceID();
+
+            if (!nb.ContainsKey(id))
+            {
+                nb.Add(id, collision.transform.parent.gameObject);
+            }
+        } else if(collision.CompareTag("PipeStart"))
         {
-            if (collision.transform.parent.CompareTag("Pipe"))
-            {
-                bool cont = false;
-
-                for (int i = 0; i < neighbours.Count; i++)
-                {
-                    if (printLog)
-                    {
-                        Debug.Log("Found new");
-                    }
-                    if (neighbours[i].Key == collision.transform.parent.gameObject)
-                    {
-                        neighbours[i] = new KeyValuePair<GameObject, bool>(collision.transform.parent.gameObject, true);
-                        cont = true;
-                        if (printLog)
-                        {
-                            Debug.Log("Added new");
-                        }
-                        break;
-                    }
-                }
-
-                if(!cont)
-                {
-                    neighbours.Add(new KeyValuePair<GameObject, bool>(collision.transform.parent.gameObject, true));
-                }
-            }
-            else if (collision.transform.parent.CompareTag("PipeStart"))
-            {
-                hasEnergy = true;
-                connectedToSource = true;
-                StartCoroutine(fillScript.TurnOn());
-            }
+            SetEnergy(true);
+            StartCoroutine(fillScript.TurnOn());
+            connectedToSource = true;
+            onAnim = true;
+            offAnim = false;
+            chainNum = 1;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.parent != null)
+        if (collision.CompareTag("PipePoint"))
         {
-            if (collision.transform.parent.CompareTag("Pipe"))
+            if(printLog)
             {
-                for(int i = 0;i < neighbours.Count;i++)
-                {
-                    if (neighbours[i].Key == collision.transform.parent.gameObject)
-                    {
-                        neighbours[i] = new KeyValuePair<GameObject, bool>(collision.transform.parent.gameObject, false);
-                        break;
-                    }
-                }
+                Debug.Log("Lost connection");
+                Debug.Log(collision.transform.parent.gameObject.GetInstanceID());
+
             }
-            else if (collision.transform.parent.CompareTag("PipeStart"))
+            var id = collision.transform.parent.gameObject.GetInstanceID();
+
+            if (nb.ContainsKey(id))
             {
-                hasEnergy = false;
-                connectedToSource = false;
-                StartCoroutine(fillScript.TurnOff());
+                nb.Remove(id);
             }
+
+        } else if(collision.CompareTag("PipeStart"))
+        {
+            SetEnergy(false);
+            StartCoroutine(fillScript.TurnOff());
+            connectedToSource = false;
+            onAnim = false;
+            offAnim = true;
+            chainNum = 9999;
         }
+    }
+
+
+
+    public void SetEnergy(bool val)
+    {
+        hasEnergy = val;
+    }
+
+    public int ChainNum()
+    {
+        return chainNum;
     }
 }
