@@ -19,6 +19,7 @@ public class Game_Player : MonoBehaviour
     public Sprite bike;
     public Sprite golf;
     UI_Manager ui;
+    public Sprite playerHands;
     void Start()
     {
         ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UI_Manager>();
@@ -139,6 +140,10 @@ public class Game_Player : MonoBehaviour
         }
     }
 
+    public void GetHands()
+    {
+        GetComponentInChildren<SpriteRenderer>().sprite = playerHands;
+    }
     void ShowHolding()
     {
         switch (hold)
