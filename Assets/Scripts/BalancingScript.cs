@@ -20,6 +20,9 @@ public class BalancingScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         loadingBarScript = GetComponent<LoadingBarScript>();
+        Vector3 currentRot = transform.rotation.eulerAngles;
+        currentRot.z += Random.Range(-0.1f, 0.1f);
+        transform.rotation = Quaternion.Euler(currentRot);
     }
 
     // Update is called once per frame
