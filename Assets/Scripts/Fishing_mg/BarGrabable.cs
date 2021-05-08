@@ -20,7 +20,7 @@ public class BarGrabable : MonoBehaviour
     {
         loadingBarScript = GameObject.FindWithTag("LoadingBar").GetComponent<LoadingBarScript>();
         handlePivot = GameObject.FindWithTag("HandlePivot");
-        //loadingBarScript.AddFillPercent(10);
+        loadingBarScript.AddFillPercent(10);
     }
 
     // Update is called once per frame

@@ -75,7 +75,8 @@ public class LoadingBarScript : MonoBehaviour
         }
         else
         {
-            spriteRenderer.size += new Vector2(fill, 0);
+            if(spriteRenderer)
+                spriteRenderer.size += new Vector2(fill, 0);
         }
     }
 
