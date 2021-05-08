@@ -16,8 +16,8 @@ public class ResizeBar : MonoBehaviour
 
     private bool resized;
 
+    public CursorManager.CursorType cursorType;
 
-    public Texture2D texture;
     
     // Start is called before the first frame update
     void Start()
@@ -34,15 +34,21 @@ public class ResizeBar : MonoBehaviour
         
     }
 
+    private void OnMouseEnter()
+    {
+        CursorManager.Instance.SetActiveCursorType(cursorType);
+    }
+
+
     private void OnMouseOver()
     {
         isOver = true;
-        Cursor.SetCursor(texture, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     private void OnMouseExit()
     {
         isOver = false;
+        CursorManager.Instance.SetActiveCursorType(CursorManager.CursorType.ARROW);
     }
 
     private void OnMouseUp()
