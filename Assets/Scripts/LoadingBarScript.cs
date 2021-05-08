@@ -37,7 +37,6 @@ public class LoadingBarScript : MonoBehaviour
             //minigameLoader.InvokeFailure();
         } else if(currentFillLevel >= maxScale)
         {
-            Debug.Log("finished");
             minigameLoader.InvokeSuccess();
         }
     }
