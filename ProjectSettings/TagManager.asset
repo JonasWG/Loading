@@ -7,6 +7,7 @@ TagManager:
   - MinigameLoader
   - LoadingBar
   - UI
+  - Pipe
   layers:
   - Default
   - TransparentFX
