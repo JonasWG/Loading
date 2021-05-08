@@ -8,20 +8,27 @@ public class HandController : MonoBehaviour
     public GameObject leftHand;
     public GameObject rightHand;
     public GameObject bar;
-
+    public float moveSpeed;
+    public float shakeModifier;
+    
     private HandScript leftHandScript;
     private HandScript rightHandScript;
+    private LoadingBarScript loadingBarScript;
+    
 
-    public float moveSpeed;
-
-    private bool barGripped = false;
+    private bool barGripped;
     private float maxDist;
     private float minDist;
+
+    private Vector3 prevBarAngle;
+    
     // Start is called before the first frame update
     void Start()
     {
         leftHandScript = leftHand.GetComponent<HandScript>();
         rightHandScript = rightHand.GetComponent<HandScript>();
+        loadingBarScript = bar.GetComponent<LoadingBarScript>();
+        prevBarAngle = bar.transform.rotation.eulerAngles;
     }
 
     // Update is called once per frame
@@ -30,6 +37,7 @@ public class HandController : MonoBehaviour
         RightHandMovement();
         LeftHandMovement();
         GripBar();
+        MeasureBarShake();
     }
 
     void RightHandMovement()
@@ -58,7 +66,7 @@ public class HandController : MonoBehaviour
         {
             float moveDist = Vector3.Distance(leftHand.transform.position, rightHand.transform.position + moveVector);
             float potentialMoveDist = Vector3.Distance(rightHand.transform.position, rightHand.transform.position + moveVector);
-            if (moveDist < maxDist)
+            if (moveDist < maxDist && moveDist > minDist)
             {
                 rightHand.transform.position += moveVector;
                 bar.transform.position = Vector3.Lerp(rightHand.transform.position, leftHand.transform.position, 0.5f);
@@ -67,10 +75,20 @@ public class HandController : MonoBehaviour
                 bar.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 bar.transform.Rotate(0f, 0f, 180f);
             }
-            else
+            else if(moveDist >= maxDist)
             {
                 rightHand.transform.position += moveVector;
                 leftHand.transform.position = Vector3.MoveTowards(leftHand.transform.position, rightHand.transform.position, potentialMoveDist);
+                bar.transform.position = Vector3.Lerp(rightHand.transform.position, leftHand.transform.position, 0.5f);
+                var dir = leftHand.transform.position - rightHand.transform.position;
+                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                bar.transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+                bar.transform.Rotate(0f, 0f, 180f);
+            }
+            else
+            {
+                rightHand.transform.position += moveVector;
+                leftHand.transform.position = Vector3.MoveTowards(leftHand.transform.position, rightHand.transform.position, potentialMoveDist * -1f);
                 bar.transform.position = Vector3.Lerp(rightHand.transform.position, leftHand.transform.position, 0.5f);
                 var dir = leftHand.transform.position - rightHand.transform.position;
                 float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -111,9 +129,19 @@ public class HandController : MonoBehaviour
             float moveDist = Vector3.Distance(leftHand.transform.position + moveVector, rightHand.transform.position);
             float potentialMoveDist = Vector3.Distance(leftHand.transform.position, leftHand.transform.position + moveVector);
 
-            if (moveDist < maxDist)
+            if (moveDist < maxDist && moveDist > minDist)
             {
                 leftHand.transform.position += moveVector;
+                bar.transform.position = Vector3.Lerp(rightHand.transform.position, leftHand.transform.position, 0.5f);
+                var dir = leftHand.transform.position - rightHand.transform.position;
+                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                bar.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                bar.transform.Rotate(0f, 0f, 180f);
+            }
+            else if(moveDist >= maxDist)
+            {
+                leftHand.transform.position += moveVector;
+                rightHand.transform.position = Vector3.MoveTowards(rightHand.transform.position, leftHand.transform.position, potentialMoveDist);
                 bar.transform.position = Vector3.Lerp(rightHand.transform.position, leftHand.transform.position, 0.5f);
                 var dir = leftHand.transform.position - rightHand.transform.position;
                 float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -123,7 +151,7 @@ public class HandController : MonoBehaviour
             else
             {
                 leftHand.transform.position += moveVector;
-                rightHand.transform.position = Vector3.MoveTowards(rightHand.transform.position, leftHand.transform.position, potentialMoveDist);
+                rightHand.transform.position = Vector3.MoveTowards(rightHand.transform.position, leftHand.transform.position, potentialMoveDist * -1f);
                 bar.transform.position = Vector3.Lerp(rightHand.transform.position, leftHand.transform.position, 0.5f);
                 var dir = leftHand.transform.position - rightHand.transform.position;
                 float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -138,19 +166,21 @@ public class HandController : MonoBehaviour
     }
 
 
-    void BarGrippedMovement()
+    void MeasureBarShake()
     {
-        
+        Vector3 barAngle = bar.transform.rotation.eulerAngles;
+        float diff = Vector3.Distance(prevBarAngle, barAngle);
+        loadingBarScript.AddFillPercent(diff * shakeModifier * Time.deltaTime);
+        prevBarAngle = barAngle;
     }
     
-
     void GripBar()
     {
         if (Input.GetKey(KeyCode.Space) && leftHandScript.IsTouchingBar() && rightHandScript.IsTouchingBar())
         {
             barGripped = true;
             maxDist = Vector3.Distance(leftHand.transform.position, rightHand.transform.position);
-            minDist = maxDist / 2f;
+            minDist = maxDist * 0.8f;
         }
     }
 

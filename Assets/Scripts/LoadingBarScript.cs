@@ -1,21 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class LoadingBarScript : MonoBehaviour
 {
-
-    public GameObject BarFill;
-
-    public float MaxScale;
-    public float MinScale;
-    public float TimeToComplete;
+    
+    public float maxScale;
+    public float minScale;
+    public float timeToComplete;
 
     private MinigameLoader minigameLoader;
     private SpriteRenderer spriteRenderer;
 
     private float timeSpent;
-    private float currentFillLevel;
+    public float currentFillLevel;
 
 
     // Start is called before the first frame update
@@ -26,43 +25,59 @@ public class LoadingBarScript : MonoBehaviour
     }
 
     public void SetTimer(float seconds) {
-        TimeToComplete = seconds;
+        timeToComplete = seconds;
     }
 
     // Update is called once per frame
     void Update()
     {
         timeSpent += Time.deltaTime;
-        if(timeSpent > TimeToComplete)
+        if(timeSpent > timeToComplete)
         {
             //minigameLoader.InvokeFailure();
-        } else if(currentFillLevel >= MaxScale)
+        } else if(currentFillLevel >= maxScale)
         {
-            //minigameLoader.InvokeSuccess();
+            Debug.Log("finished");
+            minigameLoader.InvokeSuccess();
         }
     }
 
     public void SetFillPercent(float p)
     {
         var fill = p / 10f;
-        Vector2 v = spriteRenderer.size;
-        v.x = fill;
-        spriteRenderer.size = v;
+        if (fill > maxScale)
+        {
+            spriteRenderer.size = new Vector2(maxScale, 0);
+        }
+        else
+        {
+            Vector2 v = spriteRenderer.size;
+            v.x = fill;
+            spriteRenderer.size = v;
+        }
         currentFillLevel = fill;
     }
 
     public void AddFillPercent(float p)
     {
+        if (currentFillLevel >= maxScale)
+        {
+            return;
+        }
         var fill = p / 10f;
-        spriteRenderer.size += new Vector2(fill, 0);
         currentFillLevel += fill;
+        if (currentFillLevel >= maxScale)
+        {
+            spriteRenderer.size = new Vector2(maxScale, 0);
+        }
+        else
+        {
+            spriteRenderer.size += new Vector2(fill, 0);
+        }
     }
 
     public void ResetFill()
     {
-        Vector3 v = BarFill.transform.localScale;
-        v.x = 0f;
-        BarFill.transform.localScale = v;
     }
 
     public void ChangeBarColor(Color c)
@@ -72,7 +87,7 @@ public class LoadingBarScript : MonoBehaviour
 
     public bool IsCompletedSuccessfully()
     {
-        return currentFillLevel >= MaxScale;
+        return currentFillLevel >= maxScale;
     }
 
 }
