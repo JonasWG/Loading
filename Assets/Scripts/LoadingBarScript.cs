@@ -5,15 +5,16 @@ using UnityEngine.Serialization;
 
 public class LoadingBarScript : MonoBehaviour
 {
-    
+
     public float maxScale;
     public float minScale;
+    public float timeSpent;
+
     public float timeToComplete;
 
     private MinigameLoader minigameLoader;
     private SpriteRenderer spriteRenderer;
 
-    private float timeSpent;
     public float currentFillLevel;
 
 
@@ -24,18 +25,21 @@ public class LoadingBarScript : MonoBehaviour
         spriteRenderer = this.transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
-    public void SetTimer(float seconds) {
+    public void SetTimer(float seconds)
+    {
         timeToComplete = seconds;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         timeSpent += Time.deltaTime;
-        if(timeSpent > timeToComplete)
+        if (timeSpent > timeToComplete)
         {
             minigameLoader.InvokeFailure();
-        } else if(currentFillLevel >= maxScale)
+        }
+        else if (currentFillLevel >= maxScale)
         {
             minigameLoader.InvokeSuccess();
         }
