@@ -36,13 +36,17 @@ public class BikeScript : MonoBehaviour
 
     void MoveBike()
     {
-        if(Input.GetKey(KeyCode.A) && btn)
+        var left = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
+        var right = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
+
+
+        if (left && btn)
         {
             btn = false;
             rb.AddForce(new Vector2(Time.deltaTime * speedModifier, 0), ForceMode2D.Impulse);
             RotatePedal();
         }
-        if (Input.GetKey(KeyCode.D) && !btn)
+        if (right && !btn)
         {
             btn = true;
             rb.AddForce(new Vector2(Time.deltaTime * speedModifier, 0), ForceMode2D.Impulse);
