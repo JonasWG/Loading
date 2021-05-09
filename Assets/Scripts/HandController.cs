@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class HandController : MonoBehaviour
@@ -98,6 +99,9 @@ public class HandController : MonoBehaviour
                 bar.transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
                 bar.transform.Rotate(0f, 0f, 180f);
             }
+
+            rightHand.transform.rotation = bar.transform.rotation;
+            leftHand.transform.rotation = bar.transform.rotation;
         }
         else
         {
@@ -161,6 +165,8 @@ public class HandController : MonoBehaviour
                 bar.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 bar.transform.Rotate(0f, 0f, 180f);
             }
+            rightHand.transform.rotation = bar.transform.rotation;
+            leftHand.transform.rotation = bar.transform.rotation;
         }
         else
         {
