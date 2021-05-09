@@ -18,6 +18,7 @@ public class LoadingBarScript : MonoBehaviour
     public float currentFillLevel;
     UI_Minigame UI_Minigame;
     bool onScreen = true;
+    bool completed = false;
 
 
     // Start is called before the first frame update
@@ -42,8 +43,9 @@ public class LoadingBarScript : MonoBehaviour
         {
             minigameLoader.InvokeFailure();
         }
-        else if (currentFillLevel >= maxScale)
+        else if (currentFillLevel >= maxScale && !completed)
         {
+            completed = true;
             minigameLoader.InvokeSuccess();
         }
 

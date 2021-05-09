@@ -59,26 +59,32 @@ public class Game_Player : MonoBehaviour
                 input.x = Input.GetAxisRaw("Horizontal");
                 input.y = Input.GetAxisRaw("Vertical");
 
+                var right = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
+                var down = Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S);
+                var left = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
+                var up = Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W);
+
+
                 //right
-                if (input == new Vector2(1, 0))
+                if (right)
                 {
                     if (!WallAhead(new Vector2(1, 0))) Move(1, 0);
                     InteractionCheck(new Vector2(1, 0));
                 }
                 //down
-                else if (input == new Vector2(0, -1))
+                else if (down)
                 {
                     if (!WallAhead(new Vector2(0, -1))) Move(0, -1);
                     InteractionCheck(new Vector2(0, -1));
                 }
                 //left
-                else if (input == new Vector2(-1, 0))
+                else if (left)
                 {
                     if (!WallAhead(new Vector2(-1, 0))) Move(-1, 0);
                     InteractionCheck(new Vector2(-1, 0));
                 }
                 //up
-                else if (input == new Vector2(0, 1))
+                else if (up)
                 {
                     if (!WallAhead(new Vector2(0, 1))) Move(0, 1);
                     InteractionCheck(new Vector2(-1, 0));

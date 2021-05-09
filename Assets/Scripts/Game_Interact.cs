@@ -14,6 +14,7 @@ public class Game_Interact : MonoBehaviour
     public bool npcGive = false;
     public Game_Player.Holding item;
     public Sprite momNoHands;
+    public bool goingOut = false;
 
     void Start()
     {
@@ -63,6 +64,7 @@ public class Game_Interact : MonoBehaviour
 
             else
             {
+
                 ui.ChangetText(dialogue[stage]);
                 stage += 1;
             }
@@ -70,8 +72,9 @@ public class Game_Interact : MonoBehaviour
         else if (type == Type.truck)
         {
 
-            if (stage >= dialogue.Length)
+            if (stage >= dialogue.Length && goingOut == false)
             {
+                goingOut = true;
                 GameCat._.state = GameCat.State.end;
             }
 

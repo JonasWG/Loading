@@ -342,6 +342,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &33952136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -504,6 +505,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &37238424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -584,6 +586,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &63457505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -664,6 +667,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &77468810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -744,6 +748,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &80154438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -958,6 +963,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &181443647
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1038,6 +1044,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &209791834
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1200,6 +1207,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &259783092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1280,6 +1288,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &261020154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1360,6 +1369,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &294596954
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1440,6 +1450,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &302994101
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1519,6 +1530,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &314197452
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1763,6 +1775,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &325404682
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1843,6 +1856,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &328309737
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2333,6 +2347,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &455339669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2577,6 +2592,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &485094395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2657,6 +2673,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &492179348
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2737,6 +2754,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &501926880
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2981,6 +2999,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &507694858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3225,6 +3244,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &528891651
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3387,6 +3407,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &553021293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3467,6 +3488,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &586007358
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3547,6 +3569,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &606329467
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3873,6 +3896,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &642741778
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4035,6 +4059,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &685561093
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4514,6 +4539,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &783706251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4594,6 +4620,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &784020128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4674,6 +4701,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &838495201
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4754,6 +4782,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &890392159
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4916,6 +4945,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &955004774
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5078,6 +5108,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1058535734
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5374,6 +5405,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1113919788
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5536,6 +5568,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1168633853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5698,6 +5731,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1189987184
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5778,6 +5812,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1193497937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5940,6 +5975,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1213811216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6150,6 +6186,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1275767352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6230,6 +6267,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1283648813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6310,6 +6348,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1321730725
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6554,6 +6593,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1381289723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6634,6 +6674,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1387761329
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6801,6 +6842,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1433862431
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6881,6 +6923,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1437189059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7526,6 +7569,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1614587233
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7753,6 +7797,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1715205258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7915,6 +7960,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1777597308
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8597,7 +8643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977654802}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -1, z: 0}
+  m_LocalPosition: {x: 8, y: -1, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 777093970}
@@ -8624,6 +8670,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 0}
+  goingOut: 0
 --- !u!61 &1977654805
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8755,6 +8802,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1983050626
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8955,6 +9003,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &2043882926
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9035,6 +9084,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &2054983465
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9115,6 +9165,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &2079653278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9408,6 +9459,7 @@ MonoBehaviour:
   npcGive: 0
   item: 0
   momNoHands: {fileID: 21300000, guid: 54f4f2b757b68c04aa51450d49a716c5, type: 3}
+  goingOut: 0
 --- !u!61 &1551811932762218264
 BoxCollider2D:
   m_ObjectHideFlags: 0

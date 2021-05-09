@@ -5,6 +5,7 @@ using System;
 using System.Text.RegularExpressions;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class SoundController : MonoBehaviour
 {
@@ -62,10 +63,27 @@ public class SoundController : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.pitch = _pitch;
 
-        if (!s.source.isPlaying)
-            s.source.Play();
+        if (!s.source.isPlaying || s.paused)
+        {
+            if(!s.paused)
+                s.source.Play();
+            else
+            {
+                s.source.UnPause();
+                s.paused = false;
+            }
+        }
+        /*
         else if (s.source.isPlaying) //stop and start again if sound is already playing
         { s.source.Stop(); s.source.Play(); }
+        */
+    }
+
+    public void Pause(String name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.paused = true;
+        s.source.Pause();
     }
 
     public void Stop(string name)
@@ -80,6 +98,12 @@ public class SoundController : MonoBehaviour
         {
             sound.source.Stop();
         }
+    }
+
+    public void PlayRandom(params string[] names)
+    {
+        int randomValue = Random.Range(0, names.Length - 1);
+        Play(names[randomValue], 1);
     }
     
 }

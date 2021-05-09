@@ -234,6 +234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinigameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6813906891909106668, guid: e5066d6fd6a61f64bb8e73b7b477c6dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5066d6fd6a61f64bb8e73b7b477c6dd, type: 3}
 --- !u!4 &607139803 stripped

@@ -9,11 +9,11 @@ public class BalancingScript : MonoBehaviour
     public float balanceFactor = 28.5f;
     public float recoveryStrength = 2.5f;
     public float difficulty = 30.0f;
-    
-    
+
+
     private Rigidbody2D rb;
     private LoadingBarScript loadingBarScript;
-    
+
     private bool fell;
     // Start is called before the first frame update
     void Start()
@@ -43,26 +43,28 @@ public class BalancingScript : MonoBehaviour
         {
             angle -= 360;
         }
-        
+
         float val = Random.Range(1.5f, 4f);
 
-        currentRot.z += val * difficulty * (angle/30f) * Time.deltaTime;
+        currentRot.z += val * difficulty * (angle / 30f) * Time.deltaTime;
 
 
 
         //currentRot.z += newVal * Time.deltaTime;
-        transform.rotation = Quaternion.Euler(currentRot);   
+        transform.rotation = Quaternion.Euler(currentRot);
     }
-    
+
     void HandleKeyboardPresses()
     {
         float rot = 0;
-        if (Input.GetKey(KeyCode.A))
+        var left = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
+        var right = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
+        if (left)
         {
             rot += balanceFactor * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (right)
         {
             rot -= balanceFactor * Time.deltaTime;
         }
@@ -72,15 +74,16 @@ public class BalancingScript : MonoBehaviour
         {
             angle -= 360;
         }
-        
+
         if (rot > 0 && angle < -10f)
         {
             rot *= recoveryStrength;
-        } else if (rot < 0 && angle > 10f)
+        }
+        else if (rot < 0 && angle > 10f)
         {
             rot *= recoveryStrength;
         }
-        
+
         Vector3 currentRot = transform.rotation.eulerAngles;
         currentRot.z += rot;
         transform.rotation = Quaternion.Euler(currentRot);
@@ -104,9 +107,9 @@ public class BalancingScript : MonoBehaviour
     void FillBar()
     {
         if (fell) return;
-        
+
         loadingBarScript.AddFillPercent(fillVariable * Time.deltaTime);
-        
-        
+
+
     }
 }

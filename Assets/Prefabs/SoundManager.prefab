@@ -46,57 +46,193 @@ MonoBehaviour:
   sounds:
   - name: Golf_mg
     clip: {fileID: 8300000, guid: cfcd8bc470bd501418e89f1b781f317e, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
   - name: Stretching_mg
     clip: {fileID: 8300000, guid: 11a843ceeaa13604a904662b08d9637d, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
-  - name: BIking_mg
+  - name: Biking_mg
     clip: {fileID: 8300000, guid: 1fc8d636bdcd322439cee4756e9ddfa2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Balancing_mg
+    clip: {fileID: 8300000, guid: d176b039f58ed044c8c28f2eb18b9d38, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Fishing_mg
+    clip: {fileID: 8300000, guid: b56ab75966ee936408eab87d59365e66, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Waterpipe_mg
+    clip: {fileID: 8300000, guid: d785c50c4282a9a4da4ffaa4a183a29c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Shaking_mg
+    clip: {fileID: 8300000, guid: 64c585dc27e0a0e4394e18ea52c884ae, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Game
+    clip: {fileID: 8300000, guid: ef0ef216303947a489de52a8b29af3dc, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Golf_Ball_Hit
+    clip: {fileID: 8300000, guid: 04cf96d9fb819fe4d8001a8ff91ca754, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Golf_Ball_Wall
+    clip: {fileID: 8300000, guid: e533184a9536af84a974776f6f6ccd43, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: 7b76464117fafbb42be4b8554c37fc3c, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Bicycle
+    clip: {fileID: 8300000, guid: 143ea6adc43b3fa4d8c1f24640415cf4, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Pipe1
+    clip: {fileID: 8300000, guid: 9d962d6990fcbe84e9cbda5fe086a119, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Pipe2
+    clip: {fileID: 8300000, guid: 2e90eca48e4a5bc49983ebba6a3827ee, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
-  - name: Balancing_mg
-    clip: {fileID: 8300000, guid: d176b039f58ed044c8c28f2eb18b9d38, type: 3}
+  - name: Pipe3
+    clip: {fileID: 8300000, guid: 60dcae4695bd76e419b0b0b6251904b1, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
-  - name: Fishing_mg
-    clip: {fileID: 8300000, guid: b56ab75966ee936408eab87d59365e66, type: 3}
+  - name: Pipe4
+    clip: {fileID: 8300000, guid: 63162c68d5a5a4a449291f8af26ebcec, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
-  - name: Waterpipe_mg
-    clip: {fileID: 8300000, guid: d785c50c4282a9a4da4ffaa4a183a29c, type: 3}
+  - name: Pipe5
+    clip: {fileID: 8300000, guid: a0962ecb082db1949bdb5b39b6739060, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Water1
+    clip: {fileID: 8300000, guid: 7f28e6ce83fad54499d43db02b8b2c94, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
-  - name: Shaking_mg
-    clip: {fileID: 8300000, guid: 64c585dc27e0a0e4394e18ea52c884ae, type: 3}
-    volume: 1
+  - name: Water2
+    clip: {fileID: 8300000, guid: 520021cf53c8d9d4a8f2de95416fd7dc, type: 3}
+    volume: 0.75
     pitch: 1
-    loop: 1
+    loop: 0
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
-  - name: Game
-    clip: {fileID: 8300000, guid: ef0ef216303947a489de52a8b29af3dc, type: 3}
-    volume: 1
+  - name: Water3
+    clip: {fileID: 8300000, guid: 69616f594d5dd9c44b7e493242939348, type: 3}
+    volume: 0.75
     pitch: 1
-    loop: 1
+    loop: 0
     playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Water4
+    clip: {fileID: 8300000, guid: dfd51415df8da684f894839ec5a3e905, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Water5
+    clip: {fileID: 8300000, guid: 648bc92262a0c17459fe3992915bd663, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Hand1
+    clip: {fileID: 8300000, guid: 5318f31794d461f44bd910e6c1c29f6b, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Hand2
+    clip: {fileID: 8300000, guid: c4c8dda6f157439468038d761bdbdd7f, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
