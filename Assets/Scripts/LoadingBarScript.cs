@@ -16,6 +16,7 @@ public class LoadingBarScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     public float currentFillLevel;
+    UI_Minigame UI_Minigame;
 
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class LoadingBarScript : MonoBehaviour
     {
         minigameLoader = GameObject.FindWithTag("MinigameLoader").GetComponent<MinigameLoader>();
         spriteRenderer = this.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        UI_Minigame = GameObject.FindWithTag("UI").GetComponent<UI_Minigame>();
     }
 
     public void SetTimer(float seconds)
@@ -75,7 +77,7 @@ public class LoadingBarScript : MonoBehaviour
         }
         else
         {
-            if(spriteRenderer)
+            if (spriteRenderer)
                 spriteRenderer.size += new Vector2(fill, 0);
         }
     }

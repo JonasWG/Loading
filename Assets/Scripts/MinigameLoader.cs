@@ -50,8 +50,10 @@ public class MinigameLoader : MonoBehaviour
 
     public void InvokeFailure()
     {
-        lastSceneState = LastSceneState.FAILURE;
-        LoadMinigame(SceneIndex + 1);
+        //lastSceneState = LastSceneState.FAILURE;
+        //LoadMinigame(SceneIndex);
+        UI_Minigame minigameUI = GameObject.FindWithTag("UI").GetComponent<UI_Minigame>();
+        minigameUI.state = UI_Minigame.State.fail;
     }
 
     public void InvokeSuccess()
@@ -60,6 +62,12 @@ public class MinigameLoader : MonoBehaviour
         LoadMinigame(SceneIndex + 1);
     }
 
+
+    public void InvokeRestart()
+    {
+        lastSceneState = LastSceneState.FAILURE;
+        LoadMinigame(SceneIndex);
+    }
     public LastSceneState GetLastSceneState()
     {
         return lastSceneState;
