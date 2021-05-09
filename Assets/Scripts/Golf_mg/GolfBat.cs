@@ -36,7 +36,8 @@ public class GolfBat : MonoBehaviour
     {
         DOTween.Kill(this.transform);
         this.transform.rotation = initialRotation;
-        _polygonCollider2D.enabled = true;
+        if(_polygonCollider2D)
+            _polygonCollider2D.enabled = true;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
