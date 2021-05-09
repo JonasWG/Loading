@@ -190,6 +190,7 @@ public class HandController : MonoBehaviour
             barGripped = true;
             maxDist = Vector3.Distance(leftHand.transform.position, rightHand.transform.position);
             minDist = maxDist * 0.8f;
+            SoundController.Instance.PlayRandom("Hand1", "Hand2");
         }
     }
 

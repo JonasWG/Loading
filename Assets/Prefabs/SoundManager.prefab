@@ -140,3 +140,99 @@ MonoBehaviour:
     playOnAwake: 0
     paused: 0
     source: {fileID: 0}
+  - name: Pipe1
+    clip: {fileID: 8300000, guid: 9d962d6990fcbe84e9cbda5fe086a119, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Pipe2
+    clip: {fileID: 8300000, guid: 2e90eca48e4a5bc49983ebba6a3827ee, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Pipe3
+    clip: {fileID: 8300000, guid: 60dcae4695bd76e419b0b0b6251904b1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Pipe4
+    clip: {fileID: 8300000, guid: 63162c68d5a5a4a449291f8af26ebcec, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Pipe5
+    clip: {fileID: 8300000, guid: a0962ecb082db1949bdb5b39b6739060, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Water1
+    clip: {fileID: 8300000, guid: 7f28e6ce83fad54499d43db02b8b2c94, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Water2
+    clip: {fileID: 8300000, guid: 520021cf53c8d9d4a8f2de95416fd7dc, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Water3
+    clip: {fileID: 8300000, guid: 69616f594d5dd9c44b7e493242939348, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Water4
+    clip: {fileID: 8300000, guid: dfd51415df8da684f894839ec5a3e905, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Water5
+    clip: {fileID: 8300000, guid: 648bc92262a0c17459fe3992915bd663, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Hand1
+    clip: {fileID: 8300000, guid: 5318f31794d461f44bd910e6c1c29f6b, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Hand2
+    clip: {fileID: 8300000, guid: c4c8dda6f157439468038d761bdbdd7f, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
