@@ -508,7 +508,7 @@ MonoBehaviour:
   rightHand: {fileID: 1352395392}
   bar: {fileID: 1439257304}
   moveSpeed: 10
-  shakeModifier: 3
+  shakeModifier: 3.5
 --- !u!4 &1193537750
 Transform:
   m_ObjectHideFlags: 0
