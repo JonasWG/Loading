@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -53,17 +54,17 @@ public class PipeScript : MonoBehaviour
         if(!connectedToSource && hasEnergy)
         {
            if(nb.Count == 0)
-            {
+           {
                 SetEnergy(false);
                 chainNum = 9999;
-            } else
-            {
+           } else
+           {
                 if(minChain >= chainNum)
                 {
                     SetEnergy(false);
                     chainNum = 9999;
                 }
-            }
+           }
         }
 
         HandleAnim();
@@ -82,18 +83,22 @@ public class PipeScript : MonoBehaviour
 
     public void HandleAnim()
     {
-        if(IsEnergized() && !onAnim)
+        if(IsEnergized() && fillScript.getState() == FillScript.State.OFF)
         {
-            onAnim = true;
-            offAnim = false;
             StartCoroutine(fillScript.TurnOn());
+            debugLog("Turned on Anim started");
         }
 
-        if(!IsEnergized() && !offAnim)
+        if(!IsEnergized() && fillScript.getState() == FillScript.State.ON)
         {
-            onAnim = false;
-            offAnim = true;
             StartCoroutine(fillScript.TurnOff());
+            debugLog("Turned off Anim started");
+        }
+
+        if (connectedToSource && fillScript.getState() == FillScript.State.OFF)
+        {
+            StartCoroutine(fillScript.TurnOn());
+            debugLog("Turned off Anim started");
         }
 
     }
@@ -128,8 +133,9 @@ public class PipeScript : MonoBehaviour
             }
         } else if(collision.CompareTag("PipeStart"))
         {
+            debugLog("Turning on pipe since gained PipeStart");
             SetEnergy(true);
-            StartCoroutine(fillScript.TurnOn());
+            //StartCoroutine(fillScript.TurnOn());
             connectedToSource = true;
             onAnim = true;
             offAnim = false;
@@ -155,8 +161,9 @@ public class PipeScript : MonoBehaviour
 
         } else if(collision.CompareTag("PipeStart"))
         {
+            debugLog("Turning off pipe since lost PipeStart");
             SetEnergy(false);
-            StartCoroutine(fillScript.TurnOff());
+            //StartCoroutine(fillScript.TurnOff());
             connectedToSource = false;
             onAnim = false;
             offAnim = true;
