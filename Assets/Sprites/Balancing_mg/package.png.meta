@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8791ff2124232e64eb67dd1b545d2f87
+guid: 4e1487e2c3ee1f54b9db0b6e6c315a8f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8440155281759110339
-    second: golfBat_0
+      213: 3520532602161927012
+    second: package_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -94,13 +94,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: golfBat_0
+      name: package_0
       rect:
         serializedVersion: 2
-        x: 247
-        y: 213
-        width: 1179
-        height: 1531
+        x: 668
+        y: 0
+        width: 2009
+        height: 3248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -108,8 +108,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3b7c953d7b8eda80800000000000000
-      internalID: -8440155281759110339
+      spriteID: 4631b04cfb17bd030800000000000000
+      internalID: 3520532602161927012
       vertices: []
       indices: 
       edges: []
