@@ -12,28 +12,21 @@ public class PipeScript : MonoBehaviour
     public bool printLog;
     
     FillScript fillScript;
-
-    private bool onAnim;
-    private bool offAnim;
-
-    private Dictionary<int, GameObject> nb;
+    
 
     private List<GameObject> nbb;
     
     public bool hasEnergy;
-    private bool connectedToSource;
 
     public int chainNum;
 
-    private int startCount = 0;
+    private int startCount;
 
-    private bool retrigger;
     
     // Start is called before the first frame update
     void Start()
     {
         chainNum = 9999;
-        nb = new Dictionary<int, GameObject>();
         nbb = new List<GameObject>();
         fillScript = GetComponentInChildren<FillScript>();
         CursorManager.Instance.SetCursorVisible(true);
@@ -48,27 +41,12 @@ public class PipeScript : MonoBehaviour
             //
             if (!hasEnergy)
             {
-                debugLog("Turning on pipe since gained PipeStart");
+                DebugLog("Turning on pipe since gained PipeStart");
                 SetEnergy(true);
             }
             chainNum = 1;
         }
         int minChain = 9999;
-        /*foreach(KeyValuePair<int, GameObject> n in nb)
-        {
-            var pipe = n.Value.GetComponent<PipeScript>();
-            if (pipe.ChainNum() < minChain)
-            {
-                minChain = pipe.ChainNum();
-            }
-            if (!hasEnergy && pipe.IsEnergized() && pipe.ChainNum() < chainNum - 1)
-            {
-                SetEnergy(true);
-                chainNum = pipe.ChainNum() + 1;
-                break;
-            }
-            
-        }*/
 
         foreach (GameObject gb in nbb)
         {
@@ -103,11 +81,9 @@ public class PipeScript : MonoBehaviour
 
         HandleAnim();
 
-
-
     }
 
-    public void debugLog(string l)
+    public void DebugLog(string l)
     {
         if(printLog)
         {
@@ -120,19 +96,19 @@ public class PipeScript : MonoBehaviour
         if(IsEnergized() && fillScript.getState() == FillScript.State.OFF)
         {
             StartCoroutine(fillScript.TurnOn());
-            debugLog("Turned on Anim started");
+            DebugLog("Turned on Anim started");
         }
 
         if(!IsEnergized() && fillScript.getState() == FillScript.State.ON)
         {
             StartCoroutine(fillScript.TurnOff());
-            debugLog("Turned off Anim started");
+            DebugLog("Turned off Anim started");
         }
 
         if (startCount > 0 && fillScript.getState() == FillScript.State.OFF)
         {
             StartCoroutine(fillScript.TurnOn());
-            debugLog("Turned off Anim started");
+            DebugLog("Turned off Anim started");
         }
 
     }
@@ -140,8 +116,6 @@ public class PipeScript : MonoBehaviour
 
     public void Clicked()
     {
-        //transform.Rotate(Vector3.forward, -90f);
-        retrigger = false;
         Vector3 targetRot = transform.rotation.eulerAngles;
         targetRot.z -= 90f;
         transform.DORotate(targetRot, 0.1f);
@@ -157,57 +131,24 @@ public class PipeScript : MonoBehaviour
     {
         if (collision.CompareTag("PipePoint"))
         {
-            if (printLog)
-            {
-                Debug.Log("Gained connection");
-
-            }
-            var id = collision.transform.parent.gameObject.GetInstanceID();
-            
-            nbb.Add(collision.transform.parent.gameObject);
-            
-            if (!nb.ContainsKey(id))
-            {
-                nb.Add(id, collision.transform.parent.gameObject);
-            }
+            DebugLog("Gained connection");
+            var gb = collision.transform.parent.gameObject;
+            nbb.Add(gb);
         } else if(collision.CompareTag("PipeStart"))
         {
             startCount++;
-            //debugLog("Turning on pipe since gained PipeStart");
-            //SetEnergy(true);
-            //StartCoroutine(fillScript.TurnOn());
-            //onAnim = true;
-            //offAnim = false;
-            //chainNum = 1;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("PipePoint"))
         {
-            if(printLog)
-            {
-                Debug.Log("Lost connection");
-
-            }
+            DebugLog("Lost connection");
             var id = collision.transform.parent.gameObject.GetInstanceID();
             RemovePipe(id);
-            if (nb.ContainsKey(id))
-            {
-              
-                nb.Remove(id);
-            }
-
         } else if(collision.CompareTag("PipeStart"))
         {
             startCount--;
-            debugLog("Turning off pipe since lost PipeStart");
-            //SetEnergy(false);
-            //StartCoroutine(fillScript.TurnOff());
-            //connectedToSource = false;
-            //onAnim = false;
-            //offAnim = true;
-            //chainNum = 9999;
         }
     }
 
