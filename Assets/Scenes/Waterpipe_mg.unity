@@ -212,6 +212,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1370735782, guid: 82b4920d1da464f1c9759e5fae1a9db0, type: 3}
+      propertyPath: printLog
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6666257116914304996, guid: 82b4920d1da464f1c9759e5fae1a9db0, type: 3}
       propertyPath: m_Name
       value: PipeCorner4 (1)
@@ -1141,7 +1145,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1927601041, guid: 105bee31900f14a489e488cfaeb94aa4, type: 3}
       propertyPath: printLog
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8063080567960978164, guid: 105bee31900f14a489e488cfaeb94aa4, type: 3}
       propertyPath: m_RootOrder

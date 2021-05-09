@@ -18,6 +18,8 @@ public class PipeScript : MonoBehaviour
 
     private Dictionary<int, GameObject> nb;
 
+    private List<GameObject> nbb;
+    
     public bool hasEnergy;
     private bool connectedToSource;
 
@@ -32,6 +34,7 @@ public class PipeScript : MonoBehaviour
     {
         chainNum = 9999;
         nb = new Dictionary<int, GameObject>();
+        nbb = new List<GameObject>();
         fillScript = GetComponentInChildren<FillScript>();
         CursorManager.Instance.SetCursorVisible(true);
         CursorManager.Instance.SetActiveCursorType(CursorManager.CursorType.ARROW);
@@ -51,7 +54,7 @@ public class PipeScript : MonoBehaviour
             chainNum = 1;
         }
         int minChain = 9999;
-        foreach(KeyValuePair<int, GameObject> n in nb)
+        /*foreach(KeyValuePair<int, GameObject> n in nb)
         {
             var pipe = n.Value.GetComponent<PipeScript>();
             if (pipe.ChainNum() < minChain)
@@ -65,11 +68,26 @@ public class PipeScript : MonoBehaviour
                 break;
             }
             
-        }
+        }*/
 
+        foreach (GameObject gb in nbb)
+        {
+            var pipe = gb.GetComponent<PipeScript>();
+            if (pipe.ChainNum() < minChain)
+            {
+                minChain = pipe.ChainNum();
+            }
+            if (!hasEnergy && pipe.IsEnergized() && pipe.ChainNum() < chainNum - 1)
+            {
+                SetEnergy(true);
+                chainNum = pipe.ChainNum() + 1;
+                break;
+            }
+        }
+        
         if(startCount == 0 && hasEnergy)
         {
-           if(nb.Count == 0)
+           if(nbb.Count == 0)
            {
                 SetEnergy(false);
                 chainNum = 9999;
@@ -145,15 +163,12 @@ public class PipeScript : MonoBehaviour
 
             }
             var id = collision.transform.parent.gameObject.GetInstanceID();
-
+            
+            nbb.Add(collision.transform.parent.gameObject);
+            
             if (!nb.ContainsKey(id))
             {
                 nb.Add(id, collision.transform.parent.gameObject);
-            }
-            else
-            {
-                debugLog("Retrigger!!!");
-                retrigger = true;
             }
         } else if(collision.CompareTag("PipeStart"))
         {
@@ -161,7 +176,6 @@ public class PipeScript : MonoBehaviour
             //debugLog("Turning on pipe since gained PipeStart");
             //SetEnergy(true);
             //StartCoroutine(fillScript.TurnOn());
-            connectedToSource = true;
             //onAnim = true;
             //offAnim = false;
             //chainNum = 1;
@@ -177,17 +191,11 @@ public class PipeScript : MonoBehaviour
 
             }
             var id = collision.transform.parent.gameObject.GetInstanceID();
-
+            RemovePipe(id);
             if (nb.ContainsKey(id))
             {
-                if (retrigger)
-                {
-                    debugLog("had a retrigger so not deleting obj");
-                }
-                else
-                {
-                    nb.Remove(id);
-                }
+              
+                nb.Remove(id);
             }
 
         } else if(collision.CompareTag("PipeStart"))
@@ -214,4 +222,23 @@ public class PipeScript : MonoBehaviour
     {
         return chainNum;
     }
+
+    void RemovePipe(int id)
+    {
+        int remIndex = 9999;
+        for (int i = 0; i < nbb.Count; i++)
+        {
+            if (nbb[i].GetInstanceID() == id)
+            {
+                remIndex = i;
+                break;
+            }
+        }
+
+        if (remIndex != 9999)
+        {
+            nbb.RemoveAt(remIndex);
+        }
+    }
+    
 }
