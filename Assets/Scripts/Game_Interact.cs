@@ -20,15 +20,7 @@ public class Game_Interact : MonoBehaviour
         ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UI_Manager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        if (GameCat._.loaded == false && type != Type.truck)
-        {
-            for (int i = 0; i < dialogue.Length; i++)
-            {
-                dialogue[i] = "Test dialogue " + (int)Random.Range(1, 99);
-            }
-            npcGive = false;
-            if (type == Type.mom) type = Type.npc;
-        }
+
         if (type == Type.wall)
         {
             for (int i = 0; i < dialogue.Length; i++)

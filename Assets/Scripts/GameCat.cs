@@ -14,13 +14,12 @@ public class GameCat : MonoBehaviour
         else
             Destroy(this.gameObject);
 
-        if (MinigameLoader._ != null && MinigameLoader._.lastSceneState == MinigameLoader.LastSceneState.SUCCESS)
-            loaded = true;
+
     }
     #endregion
 
     public bool npcTalked = false;
-    public bool loaded = false;
+    public bool loaded = true;
     public enum State { start, game, end }
     public State state = State.start;
 

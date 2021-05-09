@@ -5,23 +5,24 @@ using UnityEngine;
 public class HandController : MonoBehaviour
 {
 
+    public Sprite heldSprite;
     public GameObject leftHand;
     public GameObject rightHand;
     public GameObject bar;
     public float moveSpeed;
     public float shakeModifier;
-    
+
     private HandScript leftHandScript;
     private HandScript rightHandScript;
     private LoadingBarScript loadingBarScript;
-    
+
 
     private bool barGripped;
     private float maxDist;
     private float minDist;
 
     private Vector3 prevBarAngle;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,7 @@ public class HandController : MonoBehaviour
         LeftHandMovement();
         GripBar();
         MeasureBarShake();
+        UpdateSprite();
     }
 
     void RightHandMovement()
@@ -62,7 +64,7 @@ public class HandController : MonoBehaviour
         {
             moveVector.x += moveSpeed * Time.deltaTime;
         }
-        if(barGripped)
+        if (barGripped)
         {
             float moveDist = Vector3.Distance(leftHand.transform.position, rightHand.transform.position + moveVector);
             float potentialMoveDist = Vector3.Distance(rightHand.transform.position, rightHand.transform.position + moveVector);
@@ -75,7 +77,7 @@ public class HandController : MonoBehaviour
                 bar.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 bar.transform.Rotate(0f, 0f, 180f);
             }
-            else if(moveDist >= maxDist)
+            else if (moveDist >= maxDist)
             {
                 rightHand.transform.position += moveVector;
                 leftHand.transform.position = Vector3.MoveTowards(leftHand.transform.position, rightHand.transform.position, potentialMoveDist);
@@ -124,7 +126,7 @@ public class HandController : MonoBehaviour
         {
             moveVector.x += moveSpeed * Time.deltaTime;
         }
-        if(barGripped)
+        if (barGripped)
         {
             float moveDist = Vector3.Distance(leftHand.transform.position + moveVector, rightHand.transform.position);
             float potentialMoveDist = Vector3.Distance(leftHand.transform.position, leftHand.transform.position + moveVector);
@@ -138,7 +140,7 @@ public class HandController : MonoBehaviour
                 bar.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 bar.transform.Rotate(0f, 0f, 180f);
             }
-            else if(moveDist >= maxDist)
+            else if (moveDist >= maxDist)
             {
                 leftHand.transform.position += moveVector;
                 rightHand.transform.position = Vector3.MoveTowards(rightHand.transform.position, leftHand.transform.position, potentialMoveDist);
@@ -173,7 +175,7 @@ public class HandController : MonoBehaviour
         loadingBarScript.AddFillPercent(diff * shakeModifier * Time.deltaTime);
         prevBarAngle = barAngle;
     }
-    
+
     void GripBar()
     {
         if (Input.GetKey(KeyCode.Space) && leftHandScript.IsTouchingBar() && rightHandScript.IsTouchingBar())
@@ -181,6 +183,15 @@ public class HandController : MonoBehaviour
             barGripped = true;
             maxDist = Vector3.Distance(leftHand.transform.position, rightHand.transform.position);
             minDist = maxDist * 0.8f;
+        }
+    }
+
+    void UpdateSprite()
+    {
+        if (barGripped)
+        {
+            leftHand.GetComponentInChildren<SpriteRenderer>().sprite = heldSprite;
+            rightHand.GetComponentInChildren<SpriteRenderer>().sprite = heldSprite;
         }
     }
 
