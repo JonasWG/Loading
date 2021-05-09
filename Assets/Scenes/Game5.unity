@@ -195,83 +195,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27523025}
   m_CullTransparentMesh: 1
---- !u!1001 &32054368
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 777093970}
-    m_Modifications:
-    - target: {fileID: 7760241633755216870, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: dialogue.Array.data[0]
-      value: In case you forgot I am your aunt.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216870, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: dialogue.Array.data[1]
-      value: You want to stretch with me?
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216870, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: dialogue.Array.data[2]
-      value: Here is my old stretching band!
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216870, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: dialogue.Array.data[3]
-      value: It's the stretchiest one I ever had.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216870, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: dialogue.Array.data[4]
-      value: Keep stretching!
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760241633755216874, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-      propertyPath: m_Name
-      value: NPC
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
 --- !u!1 &55275637
 GameObject:
   m_ObjectHideFlags: 0
@@ -3147,7 +3070,6 @@ Transform:
   m_Children:
   - {fileID: 1977654803}
   - {fileID: 1951501109}
-  - {fileID: 1424397261}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4793,11 +4715,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!4 &1424397261 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7760241633755216873, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
-  m_PrefabInstance: {fileID: 32054368}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1445867779
 GameObject:
   m_ObjectHideFlags: 0
@@ -7678,11 +7595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3245685636076848886, guid: d9168fe7a17bd414d9e17eb3e26befe0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 3245685636076848886, guid: d9168fe7a17bd414d9e17eb3e26befe0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3245685636076848886, guid: d9168fe7a17bd414d9e17eb3e26befe0, type: 3}
       propertyPath: m_LocalPosition.z
