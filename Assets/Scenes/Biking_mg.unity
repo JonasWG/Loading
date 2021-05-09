@@ -577,7 +577,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1279421976233454741, guid: 6a45b871375264696901667b2e613ee6, type: 3}
       propertyPath: timeToComplete
-      value: 2500
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5233092808561645060, guid: 6a45b871375264696901667b2e613ee6, type: 3}
       propertyPath: m_RootOrder
@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a1ab85cbae44187afe1e0ab1d56f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 2
+  speedModifier: 14
   pedal: {fileID: 399035938}
   wheelFront: {fileID: 2025462245}
   wheelBack: {fileID: 1452132095}
@@ -727,7 +727,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
