@@ -96,6 +96,7 @@ public class PipeScript : MonoBehaviour
         if(IsEnergized() && fillScript.getState() == FillScript.State.OFF)
         {
             StartCoroutine(fillScript.TurnOn());
+            SoundController.Instance.PlayRandom("Water1", "Water2", "Water3", "Water4", "Water5", "Water6");
             DebugLog("Turned on Anim started");
         }
 
@@ -119,6 +120,7 @@ public class PipeScript : MonoBehaviour
         Vector3 targetRot = transform.rotation.eulerAngles;
         targetRot.z -= 90f;
         transform.DORotate(targetRot, 0.1f);
+        SoundController.Instance.PlayRandom("Pipe1", "Pipe2", "Pipe3", "Pipe4", "Pipe5");
     }
 
     public bool IsEnergized()

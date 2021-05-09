@@ -5,6 +5,7 @@ using System;
 using System.Text.RegularExpressions;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class SoundController : MonoBehaviour
 {
@@ -97,6 +98,12 @@ public class SoundController : MonoBehaviour
         {
             sound.source.Stop();
         }
+    }
+
+    public void PlayRandom(params string[] names)
+    {
+        int randomValue = Random.Range(0, names.Length - 1);
+        Play(names[randomValue], 1);
     }
     
 }
