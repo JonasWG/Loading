@@ -577,7 +577,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1279421976233454741, guid: 6a45b871375264696901667b2e613ee6, type: 3}
       propertyPath: timeToComplete
-      value: 2500
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5233092808561645060, guid: 6a45b871375264696901667b2e613ee6, type: 3}
       propertyPath: m_RootOrder
