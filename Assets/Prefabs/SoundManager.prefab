@@ -62,7 +62,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Biking_mg
     clip: {fileID: 8300000, guid: 1fc8d636bdcd322439cee4756e9ddfa2, type: 3}
-    volume: 0.5
+    volume: 0.25
     pitch: 1
     loop: 0
     playOnAwake: 0
