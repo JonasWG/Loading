@@ -15,6 +15,7 @@ public class Game_Interact : MonoBehaviour
     public Game_Player.Holding item;
     public Sprite momNoHands;
     public bool goingOut = false;
+    public bool needToTalk;
 
     void Start()
     {
@@ -51,10 +52,12 @@ public class Game_Interact : MonoBehaviour
             {
                 if (npcGive)
                 {
+                    GameCat._.npcTalked = true;
                     player.GetComponent<Game_Player>().hold = item;
                 }
                 if (type == Type.mom)
                 {
+                    GameCat._.npcTalked = true;
                     GetComponentInChildren<SpriteRenderer>().sprite = momNoHands;
                     player.GetComponent<Game_Player>().GetHands();
                 }
