@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UI_Minigame : MonoBehaviour
 {
@@ -33,6 +34,45 @@ public class UI_Minigame : MonoBehaviour
         minigame.SetActive(false);
         promptTxt.text = promptMsg;
 
+        if (SceneManager.GetActiveScene().name == "Golf_mg")
+        {
+            SetCursor(true, CursorManager.CursorType.GOLF);
+        }
+        else if (SceneManager.GetActiveScene().name == "Stretching_mg")
+        {
+            SetCursor(true, CursorManager.CursorType.ARROW);
+        }
+        else if (SceneManager.GetActiveScene().name == "Biking_mg")
+        {
+            SetCursor(false, CursorManager.CursorType.ARROW);
+        }
+        else if (SceneManager.GetActiveScene().name == "Balancing_mg")
+        {
+            SetCursor(false, CursorManager.CursorType.ARROW);
+        }
+        else if (SceneManager.GetActiveScene().name == "Fishing_mg")
+        {
+            SetCursor(false, CursorManager.CursorType.ARROW);
+        }
+        else if (SceneManager.GetActiveScene().name == "Waterpipe_mg")
+        {
+            SetCursor(false, CursorManager.CursorType.ARROW);
+        }
+        else if (SceneManager.GetActiveScene().name == "Shaking_mg")
+        {
+            SetCursor(false, CursorManager.CursorType.ARROW);
+        }
+        else
+        {
+            SetCursor(false, CursorManager.CursorType.ARROW);
+        }
+
+    }
+
+    void SetCursor(bool visible, CursorManager.CursorType cursorType)
+    {
+        CursorManager.Instance.SetCursorVisible(visible);
+        CursorManager.Instance.SetActiveCursorType(cursorType);
     }
 
     // Update is called once per frame
