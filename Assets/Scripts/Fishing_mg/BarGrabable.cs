@@ -11,7 +11,8 @@ public class BarGrabable : MonoBehaviour
     private LoadingBarScript loadingBarScript;
 
     private GameObject handlePivot;
-    
+
+    private bool initializedBar;
 
     public float mouseScrollScale;
     
@@ -20,12 +21,22 @@ public class BarGrabable : MonoBehaviour
     {
         loadingBarScript = GameObject.FindWithTag("LoadingBar").GetComponent<LoadingBarScript>();
         handlePivot = GameObject.FindWithTag("HandlePivot");
-        loadingBarScript.SetFillPercent(10);
+        if (loadingBarScript)
+        {
+            loadingBarScript.SetFillPercent(10);
+            initializedBar = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!initializedBar && loadingBarScript)
+        {
+            loadingBarScript.SetFillPercent(10);
+            initializedBar = true;
+        }
+        
         if (hasBeenGrabbed)
         {
             float mouseScroll = -Input.mouseScrollDelta.y * mouseScrollScale;

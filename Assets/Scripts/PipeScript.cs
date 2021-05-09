@@ -28,6 +28,8 @@ public class PipeScript : MonoBehaviour
         chainNum = 9999;
         nb = new Dictionary<int, GameObject>();
         fillScript = GetComponentInChildren<FillScript>();
+        CursorManager.Instance.SetCursorVisible(true);
+        CursorManager.Instance.SetActiveCursorType(CursorManager.CursorType.ARROW);
     }
 
     // Update is called once per frame

@@ -23,6 +23,7 @@ public class BalancingScript : MonoBehaviour
         Vector3 currentRot = transform.rotation.eulerAngles;
         currentRot.z += Random.Range(-0.1f, 0.1f);
         transform.rotation = Quaternion.Euler(currentRot);
+        CursorManager.Instance.SetCursorVisible(false);
     }
 
     // Update is called once per frame

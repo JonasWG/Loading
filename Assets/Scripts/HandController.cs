@@ -30,6 +30,7 @@ public class HandController : MonoBehaviour
         rightHandScript = rightHand.GetComponent<HandScript>();
         loadingBarScript = bar.GetComponent<LoadingBarScript>();
         prevBarAngle = bar.transform.rotation.eulerAngles;
+        CursorManager.Instance.SetCursorVisible(false);
     }
 
     // Update is called once per frame
