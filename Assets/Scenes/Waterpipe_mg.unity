@@ -1207,7 +1207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 230938939}
-  fillRatio: 35
+  fillRatio: 50
 --- !u!1001 &1122254533101326583
 PrefabInstance:
   m_ObjectHideFlags: 0

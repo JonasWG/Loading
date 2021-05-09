@@ -64,6 +64,7 @@ public class Game_Interact : MonoBehaviour
 
             else
             {
+
                 ui.ChangetText(dialogue[stage]);
                 stage += 1;
             }
