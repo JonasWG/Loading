@@ -869,6 +869,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinigameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4366793308923319395, guid: e5066d6fd6a61f64bb8e73b7b477c6dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350205500129834741, guid: e5066d6fd6a61f64bb8e73b7b477c6dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811603707120689813, guid: e5066d6fd6a61f64bb8e73b7b477c6dd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -355.97836
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811603707120689813, guid: e5066d6fd6a61f64bb8e73b7b477c6dd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -122.118935
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301613181771569582, guid: e5066d6fd6a61f64bb8e73b7b477c6dd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -93.75134
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301613181771569582, guid: e5066d6fd6a61f64bb8e73b7b477c6dd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -111.74055
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337623076250247503, guid: e5066d6fd6a61f64bb8e73b7b477c6dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5066d6fd6a61f64bb8e73b7b477c6dd, type: 3}
 --- !u!1 &2091922591

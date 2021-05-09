@@ -60,7 +60,13 @@ public class MinigameLoader : MonoBehaviour
     public void InvokeSuccess()
     {
         lastSceneState = LastSceneState.SUCCESS;
+        StartCoroutine(LoadNext(0.25f));
+    }
+    IEnumerator LoadNext(float waittime)
+    {
+        yield return new WaitForSeconds(waittime);
         LoadMinigame(SceneIndex + 1);
+
     }
 
 
