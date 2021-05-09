@@ -43,18 +43,28 @@ public class BikeScript : MonoBehaviour
         var right = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
 
 
-        if (left && btn)
+        if (left)
         {
             btn = false;
             rb.AddForce(new Vector2(Time.deltaTime * speedModifier, 0), ForceMode2D.Impulse);
             //RotatePedal();
         }
-        if (right && !btn)
+        if (right)
         {
             btn = true;
             rb.AddForce(new Vector2(Time.deltaTime * speedModifier, 0), ForceMode2D.Impulse);
             //RotatePedal();
         }
+
+        if (left || right)
+        {
+            SoundController.Instance.Play("Bicycle", 1);
+        }
+        else
+        {
+            SoundController.Instance.Pause("Bicycle");
+        }
+        
         Vector3 currentPos = gameObject.transform.position;
 
         float p = (currentPos.x - startPos.x) / (endPos.x - startPos.x);

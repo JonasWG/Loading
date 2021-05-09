@@ -17,6 +17,8 @@ public class Sound
 
     public bool playOnAwake;
 
+    public bool paused;
+
     [HideInInspector]
     public AudioSource source;
 }

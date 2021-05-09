@@ -5568,42 +5568,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2850598283013266539, guid: 1aaac6366879f0e44b2db9a76153026f, type: 3}
-      propertyPath: sounds.Array.data[2].name
-      value: Biking_mg
-      objectReference: {fileID: 0}
-    - target: {fileID: 2850598283013266539, guid: 1aaac6366879f0e44b2db9a76153026f, type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2850598283013266539, guid: 1aaac6366879f0e44b2db9a76153026f, type: 3}
-      propertyPath: sounds.Array.data[1].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2850598283013266539, guid: 1aaac6366879f0e44b2db9a76153026f, type: 3}
-      propertyPath: sounds.Array.data[2].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2850598283013266539, guid: 1aaac6366879f0e44b2db9a76153026f, type: 3}
-      propertyPath: sounds.Array.data[3].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2850598283013266539, guid: 1aaac6366879f0e44b2db9a76153026f, type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2850598283013266539, guid: 1aaac6366879f0e44b2db9a76153026f, type: 3}
-      propertyPath: sounds.Array.data[5].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2850598283013266539, guid: 1aaac6366879f0e44b2db9a76153026f, type: 3}
-      propertyPath: sounds.Array.data[6].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2850598283013266539, guid: 1aaac6366879f0e44b2db9a76153026f, type: 3}
-      propertyPath: sounds.Array.data[7].volume
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aaac6366879f0e44b2db9a76153026f, type: 3}
 --- !u!1 &1665067416

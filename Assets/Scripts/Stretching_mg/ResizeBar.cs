@@ -74,10 +74,15 @@ public class ResizeBar : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Vector3 mouse = Input.mousePosition;
-        Vector3 pos = Camera.main.ScreenToWorldPoint(mouse);
-        clickedAt = pos;
-        boxCollider2d.size *= 2;
+        if (isOver)
+        {
+            Vector3 mouse = Input.mousePosition;
+            Vector3 pos = Camera.main.ScreenToWorldPoint(mouse);
+            clickedAt = pos;
+            boxCollider2d.size *= 2;
+            SoundController.Instance.Play("Click", 1);
+        }
+        
     }
 
     /*

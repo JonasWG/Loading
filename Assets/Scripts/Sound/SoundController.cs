@@ -62,10 +62,27 @@ public class SoundController : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.pitch = _pitch;
 
-        if (!s.source.isPlaying)
-            s.source.Play();
+        if (!s.source.isPlaying || s.paused)
+        {
+            if(!s.paused)
+                s.source.Play();
+            else
+            {
+                s.source.UnPause();
+                s.paused = false;
+            }
+        }
+        /*
         else if (s.source.isPlaying) //stop and start again if sound is already playing
         { s.source.Stop(); s.source.Play(); }
+        */
+    }
+
+    public void Pause(String name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.paused = true;
+        s.source.Pause();
     }
 
     public void Stop(string name)
