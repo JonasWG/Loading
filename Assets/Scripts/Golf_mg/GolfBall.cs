@@ -53,6 +53,7 @@ public class GolfBall : MonoBehaviour
         if (other.gameObject.CompareTag("GolfBat"))
         {
             _rigidbody2D.AddForce(new Vector2(force,0), ForceMode2D.Impulse);
+            SoundController.Instance.Play("Golf_Ball_Hit", 1);
         }
 
         if (other.gameObject.CompareTag("LoadingBarWall"))
@@ -61,6 +62,7 @@ public class GolfBall : MonoBehaviour
             _rigidbody2D.velocity = Vector2.zero;
             _rigidbody2D.AddForce(new Vector2(bounceForce, 0));
             Camera.main.DOShakePosition(.35f, .2f, 15, 90f, false);
+            SoundController.Instance.Play("Golf_Ball_Wall", 1);
         }
     }
 }

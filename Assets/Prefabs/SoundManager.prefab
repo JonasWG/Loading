@@ -46,57 +46,97 @@ MonoBehaviour:
   sounds:
   - name: Golf_mg
     clip: {fileID: 8300000, guid: cfcd8bc470bd501418e89f1b781f317e, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
   - name: Stretching_mg
     clip: {fileID: 8300000, guid: 11a843ceeaa13604a904662b08d9637d, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
-  - name: BIking_mg
+  - name: Biking_mg
     clip: {fileID: 8300000, guid: 1fc8d636bdcd322439cee4756e9ddfa2, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
   - name: Balancing_mg
     clip: {fileID: 8300000, guid: d176b039f58ed044c8c28f2eb18b9d38, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
   - name: Fishing_mg
     clip: {fileID: 8300000, guid: b56ab75966ee936408eab87d59365e66, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
   - name: Waterpipe_mg
     clip: {fileID: 8300000, guid: d785c50c4282a9a4da4ffaa4a183a29c, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
   - name: Shaking_mg
     clip: {fileID: 8300000, guid: 64c585dc27e0a0e4394e18ea52c884ae, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
   - name: Game
     clip: {fileID: 8300000, guid: ef0ef216303947a489de52a8b29af3dc, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Golf_Ball_Hit
+    clip: {fileID: 8300000, guid: 04cf96d9fb819fe4d8001a8ff91ca754, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Golf_Ball_Wall
+    clip: {fileID: 8300000, guid: e533184a9536af84a974776f6f6ccd43, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: 7b76464117fafbb42be4b8554c37fc3c, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    paused: 0
+    source: {fileID: 0}
+  - name: Bicycle
+    clip: {fileID: 8300000, guid: 143ea6adc43b3fa4d8c1f24640415cf4, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    paused: 0
     source: {fileID: 0}
