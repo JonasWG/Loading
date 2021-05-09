@@ -5,21 +5,23 @@ using TMPro;
 
 public class UI_Minigame : MonoBehaviour
 {
-
-    public string promptMsg = "Do something to load!!";
-    public bool promptActive = true;
     public enum State { prompt, active, fail }
     public State state = State.prompt;
+    [Header("Prompt")]
     public GameObject prompt;
+
+    public string promptMsg = "Do something to load!!";
     public TextMeshProUGUI promptTxt;
     public float promptTimeSpent;
     public float promptTimer = 2f;
-    //minigame refereces
-    public LoadingBarScript loadingBarScript;
-    public GameObject minigame;
 
+    //minigame refereces
+    [Header("Minigame")]
+    public GameObject minigame;
+    public LoadingBarScript loadingBarScript;
     public TextMeshProUGUI timerTxt;
     public float startTime;
+
     [Header("Failure")]
     public GameObject failScreen;
     public float failTimer = 3;
@@ -46,9 +48,7 @@ public class UI_Minigame : MonoBehaviour
             promptTimeSpent += Time.deltaTime;
             if (promptTimeSpent >= promptTimer)
             {
-                promptActive = false;
-                prompt.SetActive(false);
-                minigame.SetActive(true);
+                state = State.active;
             }
         }
         //mingame ui
@@ -59,8 +59,9 @@ public class UI_Minigame : MonoBehaviour
             failScreen.SetActive(false);
 
             float timer = startTime - loadingBarScript.timeSpent;
-            timerTxt.text = timer.ToString("F2");
+            timerTxt.text = "Loading completes in:\n" + timer.ToString("F1");
         }
+        //failure ui
         else if (state == State.fail)
         {
             prompt.SetActive(false);
@@ -68,10 +69,17 @@ public class UI_Minigame : MonoBehaviour
             failScreen.SetActive(true);
 
             failTimer -= Time.deltaTime;
-            failTimeDisplay.text = "Restarting in: " + failTimer.ToString("F1") + " !";
+            if (failTimer > 3)
+                failTimeDisplay.text = "Loading failed!";
+
+            else
+            {
+                failTimeDisplay.text = "Retrying in: " + failTimer.ToString("F1") + " !";
+
+            }
             if (failTimer <= 0)
             {
-                MinigameLoader._.InvokeFailure();
+                MinigameLoader._.InvokeRestart();
             }
         }
     }

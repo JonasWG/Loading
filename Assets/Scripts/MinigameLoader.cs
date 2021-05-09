@@ -66,7 +66,7 @@ public class MinigameLoader : MonoBehaviour
     public void InvokeRestart()
     {
         lastSceneState = LastSceneState.FAILURE;
-        LoadMinigame(SceneIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public LastSceneState GetLastSceneState()
     {
