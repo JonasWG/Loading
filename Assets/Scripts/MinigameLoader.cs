@@ -28,6 +28,8 @@ public class MinigameLoader : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(transform.gameObject);
+        SceneManager.sceneLoaded += PlaySceneMusic;
+        SceneManager.sceneLoaded += SetCursorVisible;
     }
 
     // Update is called once per frame
@@ -42,7 +44,6 @@ public class MinigameLoader : MonoBehaviour
         SceneManager.LoadScene(SceneCollection[i]);
         SceneIndex = i;
         CurrentScene = SceneManager.GetActiveScene();
-        CursorManager.Instance.SetCursorVisible(i % 2 != 0);
         if (!CurrentScene.isLoaded)
         {
             Debug.Log("Encountered error loading scene");
@@ -72,6 +73,16 @@ public class MinigameLoader : MonoBehaviour
     public LastSceneState GetLastSceneState()
     {
         return lastSceneState;
+    }
+
+    void PlaySceneMusic(Scene scene, LoadSceneMode mode)
+    {
+        SoundController.Instance.PlayMusic(scene.name);
+    }
+
+    void SetCursorVisible(Scene scene, LoadSceneMode mode)
+    {
+        CursorManager.Instance.SetCursorVisible(SceneIndex % 2 != 0);
     }
 
 }
