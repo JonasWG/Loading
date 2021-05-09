@@ -303,6 +303,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7760241633755216870, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
+      propertyPath: item
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760241633755216870, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
+      propertyPath: npcGive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760241633755216870, guid: 214a7906b4b02f54f9dd3feb4bedcdae, type: 3}
       propertyPath: dialogue.Array.data[0]
       value: In case you forgot I am your aunt.
       objectReference: {fileID: 0}
@@ -7535,7 +7543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977654802}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: -1, z: 0}
+  m_LocalPosition: {x: 8.25, y: -1, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 777093970}
@@ -8236,7 +8244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3245685636076848887, guid: d9168fe7a17bd414d9e17eb3e26befe0, type: 3}
       propertyPath: selfThoughts.Array.data[1]
-      value: I need the stretching band before I move.
+      value: I need a stretching band.
       objectReference: {fileID: 0}
     - target: {fileID: 3245685636076848887, guid: d9168fe7a17bd414d9e17eb3e26befe0, type: 3}
       propertyPath: selfThoughts.Array.data[2]

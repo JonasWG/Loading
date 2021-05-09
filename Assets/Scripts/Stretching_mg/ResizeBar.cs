@@ -25,7 +25,7 @@ public class ResizeBar : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider2d = GetComponent<BoxCollider2D>();
         loadingBarScript = GameObject.FindWithTag("LoadingBar").GetComponent<LoadingBarScript>();
-        //Cursor.SetCursor(Texture2D.normalTexture, Vector2.zero, cur);
+        CursorManager.Instance.SetActiveCursorType(CursorManager.CursorType.ARROW);
     }
 
     // Update is called once per frame

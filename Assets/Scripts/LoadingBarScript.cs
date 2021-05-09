@@ -16,6 +16,8 @@ public class LoadingBarScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     public float currentFillLevel;
+    UI_Minigame UI_Minigame;
+    bool onScreen = true;
 
 
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class LoadingBarScript : MonoBehaviour
     {
         minigameLoader = GameObject.FindWithTag("MinigameLoader").GetComponent<MinigameLoader>();
         spriteRenderer = this.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        UI_Minigame = GameObject.FindWithTag("UI").GetComponent<UI_Minigame>();
     }
 
     public void SetTimer(float seconds)
@@ -42,6 +45,12 @@ public class LoadingBarScript : MonoBehaviour
         else if (currentFillLevel >= maxScale)
         {
             minigameLoader.InvokeSuccess();
+        }
+
+        if (onScreen && transform.position.y < -8)
+        {
+            minigameLoader.InvokeFailure();
+            onScreen = false;
         }
     }
 
@@ -75,7 +84,7 @@ public class LoadingBarScript : MonoBehaviour
         }
         else
         {
-            if(spriteRenderer)
+            if (spriteRenderer)
                 spriteRenderer.size += new Vector2(fill, 0);
         }
     }
@@ -92,6 +101,10 @@ public class LoadingBarScript : MonoBehaviour
     public bool IsCompletedSuccessfully()
     {
         return currentFillLevel >= maxScale;
+    }
+
+    private void OnBecameInvisible()
+    {
     }
 
 }

@@ -42,6 +42,7 @@ public class MinigameLoader : MonoBehaviour
         SceneManager.LoadScene(SceneCollection[i]);
         SceneIndex = i;
         CurrentScene = SceneManager.GetActiveScene();
+        CursorManager.Instance.SetCursorVisible(i % 2 != 0);
         if (!CurrentScene.isLoaded)
         {
             Debug.Log("Encountered error loading scene");
@@ -50,8 +51,10 @@ public class MinigameLoader : MonoBehaviour
 
     public void InvokeFailure()
     {
-        lastSceneState = LastSceneState.FAILURE;
-        LoadMinigame(SceneIndex + 1);
+        //lastSceneState = LastSceneState.FAILURE;
+        //LoadMinigame(SceneIndex);
+        UI_Minigame minigameUI = GameObject.FindWithTag("UI").GetComponent<UI_Minigame>();
+        minigameUI.state = UI_Minigame.State.fail;
     }
 
     public void InvokeSuccess()
@@ -60,6 +63,12 @@ public class MinigameLoader : MonoBehaviour
         LoadMinigame(SceneIndex + 1);
     }
 
+
+    public void InvokeRestart()
+    {
+        lastSceneState = LastSceneState.FAILURE;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public LastSceneState GetLastSceneState()
     {
         return lastSceneState;
