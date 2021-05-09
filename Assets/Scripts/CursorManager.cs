@@ -11,6 +11,8 @@ public class CursorManager : MonoBehaviour
         private set;
     }
     
+    [SerializeField] private bool visible;
+
     [SerializeField] private List<CursorAnimation> cursorAnimations;
 
     private CursorAnimation _cursorAnimation;
@@ -18,6 +20,7 @@ public class CursorManager : MonoBehaviour
     private int _currentFrame;
     private float _frameTimer;
     private int _frameCount;
+
     
     public enum CursorType
     {
@@ -44,6 +47,11 @@ public class CursorManager : MonoBehaviour
 
     void Update()
     {
+        if (visible)
+            Cursor.visible = true;
+        else
+            Cursor.visible = false;
+        
         _frameTimer -= Time.deltaTime;
         if (_frameTimer <= 0f)
         {
@@ -79,6 +87,11 @@ public class CursorManager : MonoBehaviour
         _currentFrame = 0;
         _frameTimer = cursorAnimation.frameRate;
         _frameCount = cursorAnimation.textureArray.Length;
+    }
+
+    public void SetCursorVisible(bool visibleNew)
+    {
+        this.visible = visibleNew;
     }
 
     [System.Serializable]

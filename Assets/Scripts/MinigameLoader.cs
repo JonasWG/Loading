@@ -42,6 +42,7 @@ public class MinigameLoader : MonoBehaviour
         SceneManager.LoadScene(SceneCollection[i]);
         SceneIndex = i;
         CurrentScene = SceneManager.GetActiveScene();
+        CursorManager.Instance.SetCursorVisible(i % 2 != 0);
         if (!CurrentScene.isLoaded)
         {
             Debug.Log("Encountered error loading scene");

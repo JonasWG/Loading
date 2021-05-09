@@ -25,6 +25,7 @@ public class BikeScript : MonoBehaviour
         startPos = gameObject.transform.position;
         endPos = finish.transform.position;
         loadingBarScript = bar.GetComponent<LoadingBarScript>();
+        CursorManager.Instance.SetCursorVisible(false);
     }
 
     // Update is called once per frame
