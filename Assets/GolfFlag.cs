@@ -4,12 +4,5 @@ using UnityEngine;
 
 public class GolfFlag : MonoBehaviour
 {
-    public bool
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("GolfBall"))
-        {
 
-        }
-    }
 }
