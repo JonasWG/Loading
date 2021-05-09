@@ -7,6 +7,9 @@ public class BikeScript : MonoBehaviour
 
     public float speedModifier;
     public GameObject pedal;
+    public GameObject wheelFront;
+    public GameObject wheelBack;
+    
     public GameObject finish;
     public GameObject bar;
 
@@ -44,23 +47,32 @@ public class BikeScript : MonoBehaviour
         {
             btn = false;
             rb.AddForce(new Vector2(Time.deltaTime * speedModifier, 0), ForceMode2D.Impulse);
-            RotatePedal();
+            //RotatePedal();
         }
         if (right && !btn)
         {
             btn = true;
             rb.AddForce(new Vector2(Time.deltaTime * speedModifier, 0), ForceMode2D.Impulse);
-            RotatePedal();
+            //RotatePedal();
         }
         Vector3 currentPos = gameObject.transform.position;
 
         float p = (currentPos.x - startPos.x) / (endPos.x - startPos.x);
-        Debug.Log(p);
         loadingBarScript.SetFillPercent(p * 100f);
+
+        RotateWheels();
+        RotatePedal();
+
     }
 
     void RotatePedal()
     {
         pedal.transform.Rotate(new Vector3(0, 0, rb.velocity.magnitude * Time.deltaTime * 360));
+    }
+
+    void RotateWheels()
+    {
+        wheelFront.transform.Rotate(new Vector3(0, 0, rb.velocity.magnitude * Time.deltaTime * 360));
+        wheelBack.transform.Rotate(new Vector3(0, 0, rb.velocity.magnitude * Time.deltaTime * 360));
     }
 }
